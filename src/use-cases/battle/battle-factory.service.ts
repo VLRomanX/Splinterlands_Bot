@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Battle } from '../../core/entities';
-import { CreateBattleDto, UpdateBattleDto } from 'src/core';
+import { Battle, CreateBattleDto, UpdateBattleDto } from 'src/core';
 
 @Injectable()
 export class BattleFactoryService {

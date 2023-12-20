@@ -1,8 +1,8 @@
-import { Battle, Guild } from "../entities";
+import { Battle, GuildList } from "../entities";
 import { IGenericRepository } from "./generic-repository.abstract";
 
 export abstract class IDataServices {
     abstract battles: IGenericRepository<Battle>;
 
-    abstract guilds: IGenericRepository<Guild>;
+    abstract guilds: IGenericRepository<GuildList>;
 }

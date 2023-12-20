@@ -9,7 +9,10 @@ import { Battle, BattleDocument } from "./model";
 export class MongoDataServices implements IDataServices, OnApplicationBootstrap {
     battles: MongoGenericRepository<Battle>;
 
-    constructor(@InjectModel(Battle.name) private BattleRepository: Model<BattleDocument>) { }
+    constructor(
+        @InjectModel(Battle.name)
+        private BattleRepository: Model<BattleDocument>
+    ) { }
 
     onApplicationBootstrap() {
         this.battles = new MongoGenericRepository<Battle>(this.BattleRepository);

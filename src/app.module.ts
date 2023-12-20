@@ -1,11 +1,11 @@
 import { Module } from "@nestjs/common";
-import { BattleController } from "./controllers";
+import { BattleController, GuildController } from "./controllers";
 import { DataServicesModule } from "./services/data-services/data-services.module";
-import { BattleUseCasesModule } from "./use-cases";
+import { BattleUseCasesModule, GuildUseCasesModule } from "./use-cases";
 
 @Module({
-  imports: [DataServicesModule, BattleUseCasesModule],
-  controllers: [BattleController],
+  imports: [DataServicesModule, BattleUseCasesModule, GuildUseCasesModule],
+  controllers: [BattleController, GuildController],
   providers: [],
 })
 export class AppModule { }

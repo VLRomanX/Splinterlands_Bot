@@ -1,2 +1,2 @@
 export * from './battle'
-export * from './guild'
+export * from './guild-list'

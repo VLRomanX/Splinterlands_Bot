@@ -21,7 +21,7 @@ export class BattleUseCases {
 
     async createBattle(createBattleDto: CreateBattleDto): Promise<Battle> {
         const battle = this.battleFactoryService.createNewBattle(createBattleDto);
-        return await this.dataServices.battles.create(battle);
+        return await this.dataServices.battles.post(battle);
     }
 
     async updateBattle(battleId: string, updateBattleDto: UpdateBattleDto): Promise<Battle> {

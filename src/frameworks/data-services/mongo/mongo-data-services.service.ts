@@ -11,7 +11,7 @@ export class MongoDataServices implements IDataServices, OnApplicationBootstrap 
 
     constructor(
         @InjectModel(Battle.name)
-        private BattleRepository: Model<BattleDocument>
+        private BattleRepository: Model<BattleDocument>,
     ) { }
 
     onApplicationBootstrap() {

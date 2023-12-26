@@ -18,7 +18,7 @@ export class MongoGenericRepository<T> implements IGenericRepository<T> {
         return await this._repository.findById(id).populate(this._populateOnFind).exec() as T;
     }
 
-    async create(item: T): Promise<T> {
+    async post(item: T): Promise<T> {
         return await this._repository.create(item);
     }
 

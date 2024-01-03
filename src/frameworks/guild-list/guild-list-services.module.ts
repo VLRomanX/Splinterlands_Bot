@@ -1,9 +1,9 @@
 import { Module } from "@nestjs/common";
 import { MongooseModule } from "@nestjs/mongoose";
-import { IDataServices } from "src/core";
+import { IGuildListServices } from "src/core";
 import { DATA_BASE_CONFIGURATION } from "src/configuration";
 import { GuildList, GuildListSchema } from "./model";
-import { SplinterlandsDataServices } from "./splinterlands-data-services.service";
+import { GuildListServices } from "./guild-list-services.service";
 
 @Module({
     imports: [
@@ -14,10 +14,10 @@ import { SplinterlandsDataServices } from "./splinterlands-data-services.service
     ],
     providers: [
         {
-            provide: IDataServices,
-            useClass: SplinterlandsDataServices,
+            provide: IGuildListServices,
+            useClass: GuildListServices,
         },
     ],
-    exports: [IDataServices],
+    exports: [IGuildListServices],
 })
-export class SplinterlandsDataServicesModule { }
+export class GuildListServicesModule { }

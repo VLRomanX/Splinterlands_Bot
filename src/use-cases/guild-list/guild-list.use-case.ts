@@ -1,21 +1,21 @@
 import { Injectable } from "@nestjs/common";
-import { CreateGuildListDto, GuildList } from "src/core";
-import { GuildListFactoryService } from "./guild-list-factory.service";
-import { IGuildListServices } from "../../core/abstracts";
+import { GuildList, IGuildListServices } from "src/core";
 
 @Injectable()
 export class GuildListUseCases {
     constructor(
         private guildListServices: IGuildListServices,
-        private guildListFactoryService: GuildListFactoryService,
     ) { }
 
-    async getAllGuildList(): Promise<GuildList[]> {
-        return await this.guildListServices.getAllGuildList();
+    async fetchAllGuildsFromAPI(): Promise<GuildList[]> {
+        return await this.guildListServices.fetchAllGuildsFromAPI();
     }
 
-    async postGuildList(): Promise<GuildList[]> {
-        return await this.guildListServices.postGuildList();
+    async saveFetchedGuilds(): Promise<GuildList[]> {
+        return await this.guildListServices.saveFetchedGuilds();
+    }
 
+    async findAllGuilds(): Promise<GuildList[]> {
+        return await this.guildListServices.findAllGuilds();
     }
 }

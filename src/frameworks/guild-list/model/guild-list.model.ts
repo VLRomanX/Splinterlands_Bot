@@ -1,4 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import * as mongoose from 'mongoose';
 
 export type GuildListDocument = GuildList & Document;
 
@@ -32,10 +33,10 @@ export class GuildList {
     @Prop()
     level: number;
 
-    @Prop()
+    @Prop({ type: mongoose.Schema.Types.Mixed })
     data: any;
 
-    @Prop()
+    @Prop({ type: mongoose.Schema.Types.Mixed })
     buildings: any;
 
     @Prop()
@@ -53,7 +54,7 @@ export class GuildList {
     @Prop()
     tournamentStatus: number;
 
-    @Prop()
+    @Prop({ type: mongoose.Schema.Types.Mixed })
     tournamentData: any;
 
     @Prop()

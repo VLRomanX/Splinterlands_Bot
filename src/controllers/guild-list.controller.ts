@@ -6,12 +6,27 @@ export class GuildListController {
     constructor(private guildListUseCases: GuildListUseCases) { }
 
     @Get()
-    async getAllGuildsSplintelandsApi() {
-        return await this.guildListUseCases.getAllGuildList();
+    async fetchAllGuildsFromAPI() {
+        return await this.guildListUseCases.fetchAllGuildsFromAPI();
     }
 
     @Post()
-    async postGuildsSplintelandsApi() {
-        return await this.guildListUseCases.postGuildList();
+    async saveFetchedGuilds() {
+        return await this.guildListUseCases.saveFetchedGuilds();
+    }
+
+    @Get()
+    async findAllGuilds() {
+        return await this.guildListUseCases.findAllGuilds();
+    }
+
+    @Post()
+    async fetchAndSaveGuildMembers() {
+        return await this.guildListUseCases.fetchAndSaveGuildMembers();
+    }
+
+    @Get()
+    async findAllGuildMembers() {
+        return await this.guildListUseCases.findAllGuildMembers();
     }
 }

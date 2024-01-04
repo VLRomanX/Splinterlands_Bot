@@ -19,14 +19,4 @@ export class GuildListController {
     async findAllGuilds() {
         return await this.guildListUseCases.findAllGuilds();
     }
-
-    @Post()
-    async fetchAndSaveGuildMembers() {
-        return await this.guildListUseCases.fetchAndSaveGuildMembers();
-    }
-
-    @Get()
-    async findAllGuildMembers() {
-        return await this.guildListUseCases.findAllGuildMembers();
-    }
 }

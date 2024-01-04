@@ -2,7 +2,7 @@ import { Injectable } from "@nestjs/common";
 import { GuildMember, IGuildMemberServices } from "src/core";
 
 @Injectable()
-export class GuildListUseCases {
+export class GuildMemberUseCases {
     constructor(
         private guildMemberServices: IGuildMemberServices,
     ) { }

@@ -1,11 +1,11 @@
 import { Module } from "@nestjs/common";
-import { GuildListFactoryService } from "./guild-member-factory.service";
-import { GuildListUseCases } from "./guild-member.use-case";
-import { SplinterlandsServicesModule } from "src/services/splinterlands-services/splinterlands-services.module";
+import { GuildMemberFactoryService } from "./guild-member-factory.service";
+import { GuildMemberUseCases } from "./guild-member.use-case";
+import { GuildMemberDataServicesModule } from "src/services/guild-member-services/guild-member-services.module";
 
 @Module({
-    imports: [SplinterlandsServicesModule],
-    providers: [GuildListFactoryService, GuildListUseCases],
-    exports: [GuildListFactoryService, GuildListUseCases],
+    imports: [GuildMemberDataServicesModule],
+    providers: [GuildMemberFactoryService, GuildMemberUseCases],
+    exports: [GuildMemberFactoryService, GuildMemberUseCases],
 })
-export class GuildListUseCasesModule { }
+export class GuildMemberUseCasesModule { }

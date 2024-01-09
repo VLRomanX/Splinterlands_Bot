@@ -1,23 +1,25 @@
 import { Module } from "@nestjs/common";
 import { MongooseModule } from "@nestjs/mongoose";
-import { IDataServices } from "src/core";
+import { IBattleServices } from "src/core";
 import { DATA_BASE_CONFIGURATION } from "src/configuration";
 import { Battle, BattleSchema } from "./model";
-import { MongoDataServices } from "./mongo-data-services.service";
+import { GuildMember, GuildMemberSchema } from "../guild-member/model";
+import { BattleServices } from "./battle-services.service";
 
 @Module({
     imports: [
         MongooseModule.forFeature([
             { name: Battle.name, schema: BattleSchema },
+            { name: GuildMember.name, schema: GuildMemberSchema },
         ]),
         MongooseModule.forRoot(DATA_BASE_CONFIGURATION.mongoConnectionString),
     ],
     providers: [
         {
-            provide: IDataServices,
-            useClass: MongoDataServices,
+            provide: IBattleServices,
+            useClass: BattleServices,
         },
     ],
-    exports: [IDataServices],
+    exports: [IBattleServices],
 })
-export class MongoDataServicesModule { }
+export class BattleServicesModule { }

@@ -40,23 +40,15 @@ class BattleDetails {
 
 @Schema()
 export class Battle {
-    @Prop({ required: true })
-    battleQueueId1: string;
 
     @Prop({ required: true })
-    battleQueueId2: string;
+    player1: string;
 
     @Prop({ required: true })
-    player1Id: string;
+    player2: string;
 
     @Prop({ required: true })
-    player2Id: string;
-
-    @Prop({ required: true })
-    winnerId: string;
-
-    @Prop({ required: true })
-    createdAt: Date;
+    winner: string;
 
     @Prop({ required: true })
     manaCap: number;

@@ -13,19 +13,17 @@ class Team {
 
 class BattleDetails {
     seed: string;
-    team1: Team;
-    team2: Team;
+    team: Team;
 }
 
 export class Battle {
-    battleQueueId1: string;
-    battleQueueId2: string;
-    player1Id: string;
-    player2Id: string;
-    winnerId: string;
-    createdAt: Date;
+    player1: string;
+    player2: string;
+    match_type: string;
+    winner: string;
     manaCap: number;
     ruleset: string;
     inactive: string;
+    format: string;
     battleDetails: BattleDetails;
 }

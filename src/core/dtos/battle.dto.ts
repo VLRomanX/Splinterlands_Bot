@@ -39,36 +39,26 @@ class BattleDetailsDto {
 
     @ValidateNested()
     @Type(() => TeamDto)
-    team1: TeamDto;
-
-    @ValidateNested()
-    @Type(() => TeamDto)
-    team2: TeamDto;
+    team: TeamDto;
 }
 
 export class CreateBattleDto {
-    @IsString()
-    @IsNotEmpty()
-    battleQueueId1: string;
 
     @IsString()
     @IsNotEmpty()
-    battleQueueId2: string;
+    player1: string;
 
     @IsString()
     @IsNotEmpty()
-    player1Id: string;
+    player2: string;
 
     @IsString()
     @IsNotEmpty()
-    player2Id: string;
+    match_type: string;
 
     @IsString()
     @IsNotEmpty()
-    winnerId: string;
-
-    @IsDate()
-    createdAt: Date;
+    winner: string;
 
     @IsNumber()
     manaCap: number;
@@ -78,6 +68,9 @@ export class CreateBattleDto {
 
     @IsString()
     inactive: string;
+
+    @IsString()
+    format: string;
 
     @ValidateNested()
     @Type(() => BattleDetailsDto)

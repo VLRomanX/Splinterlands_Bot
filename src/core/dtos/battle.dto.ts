@@ -43,7 +43,6 @@ class BattleDetailsDto {
 }
 
 export class CreateBattleDto {
-
     @IsString()
     @IsNotEmpty()
     player1: string;
@@ -64,10 +63,10 @@ export class CreateBattleDto {
     manaCap: number;
 
     @IsString()
-    ruleset: string;
+    ruleset: string[];
 
     @IsString()
-    inactive: string;
+    inactive: string[];
 
     @IsString()
     format: string;

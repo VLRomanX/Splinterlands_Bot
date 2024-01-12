@@ -22,8 +22,8 @@ export class Battle {
     match_type: string;
     winner: string;
     manaCap: number;
-    ruleset: string;
-    inactive: string;
+    ruleset: string[];
+    inactive: string[];
     format: string;
     battleDetails: BattleDetails;
 }

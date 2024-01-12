@@ -40,7 +40,6 @@ class BattleDetails {
 
 @Schema()
 export class Battle {
-
     @Prop({ required: true })
     player1: string;
 
@@ -48,16 +47,22 @@ export class Battle {
     player2: string;
 
     @Prop({ required: true })
+    match_type: string;
+
+    @Prop({ required: true })
     winner: string;
 
     @Prop({ required: true })
     manaCap: number;
 
-    @Prop({ required: true })
-    ruleset: string;
+    @Prop({ type: [String] })
+    ruleset: string[];
+
+    @Prop({ type: [String] })
+    inactive: string[];
 
     @Prop({ required: true })
-    inactive: string;
+    format: string;
 
     @Prop({ type: BattleDetails, required: true })
     battleDetails: BattleDetails;

@@ -3,6 +3,10 @@ import { Type } from 'class-transformer';
 import { PartialType } from '@nestjs/mapped-types';
 
 class CardDto {
+    @IsString()
+    @IsNotEmpty()
+    uid: string;
+
     @IsNumber()
     @IsNotEmpty()
     cardDetailId: number;
@@ -43,6 +47,11 @@ class BattleDetailsDto {
 }
 
 export class CreateBattleDto {
+
+    @IsString()
+    @IsNotEmpty()
+    battle_queue_id: string;
+
     @IsString()
     @IsNotEmpty()
     player1: string;

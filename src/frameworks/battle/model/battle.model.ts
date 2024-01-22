@@ -4,6 +4,9 @@ export type BattleDocument = Battle & Document;
 
 class Card {
     @Prop({ required: true })
+    uid: string;
+
+    @Prop({ required: true })
     cardDetailId: number;
 
     @Prop({ required: true })
@@ -40,6 +43,9 @@ class BattleDetails {
 
 @Schema()
 export class Battle {
+    @Prop({ required: true })
+    battle_queue_id: string;
+
     @Prop({ required: true })
     player1: string;
 

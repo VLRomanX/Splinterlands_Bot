@@ -1,4 +1,5 @@
 class Card {
+    uid: string;
     cardDetailId: number;
     cardName: string;
     isGold: boolean;
@@ -17,6 +18,7 @@ class BattleDetails {
 }
 
 export class Battle {
+    battle_queue_id: string;
     player1: string;
     player2: string;
     match_type: string;
